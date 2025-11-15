@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CadastroEventos.Views.Cadastro"
+             NavigationPage.HasNavigationBar="False">
+    <VerticalStackLayout>
+        <Label 
+            Text="Cadastro de Evento"
+            FontSize="45"
+            FontFamily="LexendBold"
+            TextColor="{StaticResource Tertiary}"
+            HorizontalTextAlignment="Center"
+            Margin="15"/>
+
+        <Frame Margin="10" Padding="10">
+            <VerticalStackLayout>
+                <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto"
+                      ColumnDefinitions="*, 2*"
+                      RowSpacing="10"
+                      ColumnSpacing="50"
+                      Margin="5">
+                    
+                    <!-- Nome do Evento -->
+                    <Label Grid.Row="0" Grid.Column="0"
+                           Text="Nome:"
+                           TextColor="{StaticResource Primary}"
+                           FontSize="15"
+                           FontFamily="LexendBold"/>
+                    <Entry Grid.Row="0" Grid.Column="1" 
+                           x:Name="nomeEvento"
+                           Placeholder="Nome do evento"
+                           Margin="0, 0, 0, 10"/>
+
+                    <!-- Data de Início -->
+                    <Label Grid.Row="1" Grid.Column="0"
+                           Text="Início:"
+                           FontSize="15"
+                           FontFamily="LexendBold"
+                           TextColor="{StaticResource Primary}"/>
+                    <DatePicker Grid.Row="1" Grid.Column="1"
+                                x:Name="dtpck_inicio"
+                                Format="dd/MM/yyyy"
+                                BackgroundColor="{StaticResource Primary}"
+                                Margin="0, 0, 0, 10"/>
+                
+                    <!-- Data de Término -->
+                    <Label Grid.Row="2" Grid.Column="0"
+                           Text="Término:"
+                           FontSize="15"
+                           FontFamily="LexendBold"
+                           TextColor="{StaticResource Primary}"/>
+                    <DatePicker Grid.Row="2" Grid.Column="1"
+                                x:Name="dtpck_termino"
+                                Format="dd/MM/yyyy"
+                                BackgroundColor="{StaticResource Primary}"
+                                Margin="0, 0, 0, 10"/>
+                    
+                    <!-- Número de Participantes -->
+                    <Label Grid.Row="3" Grid.Column="0"
+                           Text="Participantes:"
+                           FontSize="15"
+                           FontFamily="LexendBold"
+                           TextColor="{StaticResource Primary}"/>
+                    <Entry Grid.Row="3" Grid.Column="1"
+                            x:Name="qtdParticipantes"
+                           Placeholder="0"
+                           Margin="0, 0, 0, 10"/>
+
+                    <!-- Local do Evento -->
+                    <Label Grid.Row="4" Grid.Column="0"
+                           Text="Local:"
+                           FontSize="15"
+                           FontFamily="LexendBold"
+                           TextColor="{StaticResource Primary}"/>
+                    <Entry Grid.Row="4" Grid.Column="1"
+                           x:Name="localEvento"
+                           Placeholder=""
+                           Margin="0, 0, 0, 10"/>
+
+                    <!-- Custo por Participante -->
+                    <Label Grid.Row="5" Grid.Column="0"
+                           Text="Custo por Participante:"
+                           FontSize="15"
+                           FontFamily="LexendBold"
+                           TextColor="{StaticResource Primary}"/>
+                    <Entry Grid.Row="5" Grid.Column="1"
+                           x:Name="custoParticipante"
+                           Placeholder="R$"
+                           Margin="0, 0, 0, 10"/>
+                </Grid>
+            </VerticalStackLayout>
+        </Frame>
+
+        <Button Text="Avançar"
+                HorizontalOptions="Center"
+                Clicked="Button_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>

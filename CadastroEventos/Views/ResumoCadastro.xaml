@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CadastroEventos.Views.ResumoCadastro"
+             NavigationPage.HasNavigationBar="False">
+    <VerticalStackLayout>
+        <Label 
+            Text="Resumo do Cadastro"
+            FontSize="45"
+            FontFamily="LexendBold"
+            TextColor="{StaticResource Tertiary}"
+            HorizontalTextAlignment="Center"
+            Margin="15"/>
+
+        <Frame Margin="10" Padding="10">
+            <VerticalStackLayout>
+                <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
+                      ColumnDefinitions="*, 2*"
+                      RowSpacing="10"
+                      ColumnSpacing="50"
+                      Margin="5">
+
+                    <!-- Nome do Evento -->
+                    <Label Grid.Row="0" Grid.Column="0"
+                           Text="Nome:"
+                           TextColor="{StaticResource Primary}"
+                           FontSize="15"
+                           FontFamily="LexendBold"/>
+                    <Label Grid.Row="0" Grid.Column="1"
+                           Text="{Binding Nome}"
+                           FontSize="15"/>
+
+                    <!-- Data de Início -->
+                    <Label Grid.Row="1" Grid.Column="0"
+                           Text="Início:"
+                           FontSize="15"
+                           FontFamily="LexendBold"
+                           TextColor="{StaticResource Primary}"/>
+                    <Label Grid.Row="1" Grid.Column="1"
+                           Text="{Binding DataInicio,StringFormat='{0:dd/MM/yyyy}'}"
+                           FontSize="15"/>
+
+                    <!-- Data de Término -->
+                    <Label Grid.Row="2" Grid.Column="0"
+                           Text="Término:"
+                           FontSize="15"
+                           FontFamily="LexendBold"
+                           TextColor="{StaticResource Primary}"/>
+                    <Label Grid.Row="2" Grid.Column="1"
+                           Text="{Binding DataTermino,StringFormat='{0:dd/MM/yyyy}'}"
+                           FontSize="15"/>
+
+                    <!-- Número de Participantes -->
+                    <Label Grid.Row="3" Grid.Column="0"
+                           Text="Participantes:"
+                           FontSize="15"
+                           FontFamily="LexendBold"
+                           TextColor="{StaticResource Primary}"/>
+                    <Label Grid.Row="3" Grid.Column="1"
+                           Text="{Binding Participantes}"
+                           FontSize="15"/>
+
+                    <!-- Local do Evento -->
+                    <Label Grid.Row="4" Grid.Column="0"
+                           Text="Local:"
+                           FontSize="15"
+                           FontFamily="LexendBold"
+                           TextColor="{StaticResource Primary}"/>
+                    <Label Grid.Row="4" Grid.Column="1"
+                           Text="{Binding Local}"
+                           FontSize="15"/>
+
+                    <!-- Custo por Participante -->
+                    <Label Grid.Row="5" Grid.Column="0"
+                           Text="Custo por Participatne:"
+                           FontSize="15"
+                           FontFamily="LexendBold"
+                           TextColor="{StaticResource Primary}"/>
+                    <Label Grid.Row="5" Grid.Column="1"
+                           Text="{Binding CustoParticipante, StringFormat='{0:c}'}"
+                           FontSize="15"/>
+
+                    <!-- Duração do Evento -->
+                    <Label Grid.Row="6" Grid.Column="0"
+                           Text="Duração:"
+                           FontSize="15"
+                           FontFamily="LexendBold"
+                           TextColor="{StaticResource Primary}"/>
+                    <Label Grid.Row="6" Grid.Column="1"
+                           Text="{Binding DuracaoFormatada}"
+                           FontSize="15"/>
+                    
+                    <!-- Custo Total -->
+                    <Label Grid.Row="7" Grid.Column="0"
+                           Text="Custo Total:"
+                           FontSize="15"
+                           FontFamily="LexendBold"
+                           TextColor="{StaticResource Primary}"/>
+                    <Label Grid.Row="7" Grid.Column="1"
+                           Text="{Binding CustoTotal, StringFormat='{0:c}'}"
+                           FontSize="15"/>
+                    
+                </Grid>
+            </VerticalStackLayout>
+        </Frame>
+
+        <Button Text="Voltar"
+                HorizontalOptions="Center"
+                Clicked="Button_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>
